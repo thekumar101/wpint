@@ -2,12 +2,12 @@
   "name": "angular-template",
   "description": "A template to kick-start AngularJS projects",
   "version": "0.1.0",
-  "author": "Naresh Bhatia",
-  "license": "MIT",
-  "homepage": "https://github.com/archfirst/angular-template",
+  "author": "",
+  "license": "",
+  "homepage": "https://github.com/thekumar101/wpint.git",
   "repository": {
     "type": "git",
-    "url": "https://github.com/archfirst/angular-template.git"
+    "url": "https://github.com/thekumar101/wpint.git"
   },
   "scripts": {
     "init": "npm install",

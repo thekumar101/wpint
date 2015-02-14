@@ -6,7 +6,7 @@
  *
  *  An alternative to the ngMidwayTester
  */
-
+ 
 describe('Server: accountService', function() {
     'use strict';
     var accountService;

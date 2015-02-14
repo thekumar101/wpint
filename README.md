@@ -1,6 +1,3 @@
-# Angular Template
-This template provides a starter project that implements best practices in coding, building and testing AngularJS applications. It is heavily influenced by John Papa's [AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide) and his [Gulp Patterns](https://github.com/johnpapa/gulp-patterns) project. I would like to take this opportunity to thank John for providing these excellent resources to make our jobs easier and more enjoyable.
-
 ## Requirements
 
 - Install Node
@@ -52,7 +49,7 @@ The folder structure is somewhat simplified and flatter compared to John Papa's 
 
 - `build:` Production build (do not check in)
 
-- `mock-server:` Used to serve the application during development and also to provide mock data. The real server is intended to be developed as a separate project utilizing best practices for the chosen server-side technology (see the [Node REST Template](https://github.com/archfirst/node-rest-template) for an example). This approach decouples client and server development so that they can progress independently and forces them to define tighter APIs.
+- `mock-server:`
 
 - `node_modules:` Node.js modules downloaded by `npm install` (do not check in)
 
