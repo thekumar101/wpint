@@ -1,20 +1,11 @@
 <section id="dashboard-view" class="container-fluid">
 
-    <h1>Asset Allocation</h1>
+    <h1>Table Card</h1> 
 
     <div class="row">
 
         <div class="col-sm-3 col-md-2 sidebar">
-            <dl>
-                <dt>Total Value</dt>
-                <dd>{{vm.account.market_value | currency:undefined:0}}</dd>
-                <dt>Your Investment</dt>
-                <dd>{{vm.account.investment | currency:undefined:0}}</dd>
-                <dt>Your Earnings</dt>
-                <dd>{{vm.account.earnings | currency:undefined:0}}</dd>
-                <dt>Cash</dt>
-                <dd>{{vm.account.cash | currency:undefined:0}}</dd>
-            </dl>
+            
 
             <div class="medialinks">
                 <a href="http://www.facebook.com/" target="_blank">
@@ -43,19 +34,23 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Asset Class</th>
-                                    <th class="text-right">Market Value</th>
-                                    <th class="text-right">Allocation</th>
-                                    <th class="text-right">Return</th>
+                                    <th>Company</th>
+                                    <th>Open</th>
+                                    <th>High</th>
+                                    <th>Low</th>
+                                    <th>Close</th>
+                                    <th>Volume</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                <tr data-ng-repeat="a in vm.account.assets">
-                                    <td>{{a.asset_class}}</td>
-                                    <td class="text-right">{{a.market_value | currency:undefined:0}}</td>
-                                    <td class="text-right">{{a.percent_allocation | percentage:0}}</td>
-                                    <td class="text-right">{{a.percent_return | percentage:2}}</td>
+                                <tr data-ng-repeat="record in vm.list | limitTo:10">
+                                    <td>{{vm.company[$index]}}</td>
+                                    <td>{{record[1]}}</td>
+                                    <td>{{record[2]}}</td>
+                                    <td>{{record[3]}}</td>
+                                    <td>{{record[4]}}</td>
+                                    <td>{{record[5]}}</td>
                                 </tr>
                             </tbody>
                         </table>

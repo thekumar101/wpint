@@ -5,27 +5,35 @@
         .module('app.dashboard')
         .controller('DashboardController', DashboardController);
 
-    DashboardController.$inject = ['accountService', 'logger'];
+    DashboardController.$inject = ['rksvService', 'logger'];
 
     /* @ngInject */
-    function DashboardController(accountService, logger) {
+    function DashboardController(rksvService, logger) {
         var vm = this;
-
+        var result = [];
         vm.account = null;
+        vm.company = ['AAAA', 'BBBB', 'CCCC', 'DDDD', 'EEEE', 'FFFF', 'GGGG', 'HHHH', 'IIII', 'JJJJ'];
+        vm.list = [];
 
-        activate();
+
+        activate().then(function(){
+            $.each(vm.account, function(i, v){
+                vm.list[i] = vm.account[i].split(',');
+            });
+        });
 
         function activate() {
-            return getAccount().then(function() {
+            return getRecords().then(function() {
                 logger.info('Activated Dashboard View');
             });
         }
 
-        function getAccount() {
-            return accountService.getAccount().then(function(data) {
+        function getRecords() {
+            return rksvService.getRecords().then(function(data) {
                 vm.account = data;
                 return vm.account;
             });
         }
+        
     }
 })();
